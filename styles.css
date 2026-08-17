@@ -279,11 +279,30 @@ iframe {
 
 /* Style du tableau principal */
 .planning-table {
+    display: none;
     margin: auto;
     width: 80%;
     border-collapse: collapse;
     color: #0B2C7D;
     font-family: "Quicksand", sans-serif;
+}
+
+.calendar {
+    width: min(100% - 2rem, 1200px);
+    margin: 2rem auto;
+    text-align: center;
+}
+
+.calendar img {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+.calendar figcaption {
+    margin-top: 0.75rem;
+    font-size: 0.9rem;
 }
 
 /* Style de lâ€™en-tÃªte */
