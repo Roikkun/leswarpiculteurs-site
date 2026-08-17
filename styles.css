@@ -458,7 +458,7 @@ iframe {
 
 .wrapper .tooltip {
     position: absolute;
-    bottom: 120%; /* Place au-dessus de l'icÃ´ne */
+    bottom: 70%; /* Place au-dessus de l'icÃ´ne */
     left: 50%; /* Centrer horizontalement */
     transform: translateX(-50%); /* Ajustement pour le centrage */
     font-size: 14px;
@@ -958,6 +958,42 @@ html {
     .contact .wrapper .tooltip {
         display: none;
     }
+}
+
+/* Tooltip alignment and readability */
+.contact .wrapper .tooltip {
+    bottom: calc(100% + .9rem);
+    width: auto;
+    max-width: none;
+    padding: .5rem .7rem;
+    border: 1px solid rgba(255, 255, 255, .12);
+    box-shadow: 0 .5rem 1rem rgba(33, 24, 42, .18);
+    white-space: nowrap;
+}
+
+.contact .wrapper .tooltip::before {
+    bottom: -.3rem;
+}
+
+.contact .wrapper .icon:first-child .tooltip {
+    left: 0;
+    transform: translate(0, .25rem);
+}
+
+.contact .wrapper .icon:first-child:hover .tooltip,
+.contact .wrapper .icon:first-child:focus-within .tooltip {
+    transform: translate(0, 0);
+}
+
+.contact .wrapper .icon:last-child .tooltip {
+    right: 0;
+    left: auto;
+    transform: translate(0, .25rem);
+}
+
+.contact .wrapper .icon:last-child:hover .tooltip,
+.contact .wrapper .icon:last-child:focus-within .tooltip {
+    transform: translate(0, 0);
 }
 
 @media (prefers-reduced-motion: reduce) {
