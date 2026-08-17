@@ -1119,3 +1119,110 @@ iframe {
     z-index: 10000;
     isolation: isolate;
 }
+
+/* Access section: schedule, planning, then location */
+.accesHoraires {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+    width: min(100% - 2rem, 1180px);
+    margin: 0 auto;
+    padding: clamp(3rem, 8vw, 7rem) 0;
+    text-align: center;
+}
+
+.accesHoraires > h1:first-child {
+    order: 0;
+    margin: 0 0 .5rem;
+    color: #500d41;
+    font-size: clamp(2rem, 5vw, 3.5rem);
+}
+
+.accesHoraires > p {
+    order: 1;
+    max-width: 42rem;
+    margin: 0 auto;
+    line-height: 1.6;
+}
+
+.accesHoraires > p:first-of-type {
+    padding: 1.25rem 1.5rem;
+    border: 1px solid rgba(80, 13, 65, .14);
+    border-radius: 1rem;
+    background: #f8f3ed;
+    color: #500d41;
+    font-size: clamp(1.1rem, 2.5vw, 1.5rem);
+    font-weight: 700;
+}
+
+.accesHoraires > p:nth-of-type(2) {
+    color: #665d68;
+}
+
+.accesHoraires > #planning {
+    order: 2;
+    height: 0;
+    scroll-margin-top: 5rem;
+}
+
+.accesHoraires > #planning + h1,
+.accesHoraires > .calendar {
+    order: 2;
+}
+
+.accesHoraires > #planning + h1 {
+    margin: 2rem 0 0;
+    color: #500d41;
+    font-size: clamp(1.7rem, 4vw, 2.75rem);
+}
+
+.accesHoraires > .calendar {
+    width: min(100%, 1000px);
+    margin: 0 auto 1rem;
+    padding: clamp(.5rem, 2vw, 1rem);
+    border: 1px solid rgba(80, 13, 65, .12);
+    border-radius: 1.25rem;
+    background: white;
+    box-shadow: 0 1rem 2.5rem rgba(80, 13, 65, .08);
+}
+
+.accesHoraires > .calendar img {
+    border-radius: .75rem;
+}
+
+.accesHoraires > .map-container {
+    order: 3;
+    display: flex;
+    width: 100%;
+    min-height: 400px;
+    margin: 2rem 0 0;
+    padding: 1rem;
+    border-radius: 1.25rem;
+    background-image: linear-gradient(rgba(33, 24, 42, .18), rgba(33, 24, 42, .18)), url('./img/6195678.jpg');
+    box-shadow: 0 1rem 2.5rem rgba(80, 13, 65, .12);
+}
+
+.accesHoraires > .map-container iframe {
+    width: min(100%, 700px);
+    height: 400px;
+    border: 0;
+    border-radius: .75rem;
+    box-shadow: 0 .75rem 2rem rgba(0, 0, 0, .2);
+}
+
+@media (max-width: 700px) {
+    .accesHoraires {
+        width: min(100% - 2rem, 32rem);
+        padding: 3.5rem 0;
+    }
+
+    .accesHoraires > .map-container {
+        min-height: 0;
+        margin-top: 1.5rem;
+        padding: .5rem;
+    }
+
+    .accesHoraires > .map-container iframe {
+        height: min(80vw, 360px);
+    }
+}
