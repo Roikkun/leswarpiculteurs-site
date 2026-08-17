@@ -996,6 +996,20 @@ html {
     transform: translate(0, 0);
 }
 
+/* Override legacy platform-specific tooltip colors */
+.contact .wrapper .facebook:hover .tooltip,
+.contact .wrapper .discord:hover .tooltip,
+.contact .wrapper .instagram:hover .tooltip {
+    background: #21182a;
+    color: white;
+}
+
+.contact .wrapper .facebook:hover .tooltip::before,
+.contact .wrapper .discord:hover .tooltip::before,
+.contact .wrapper .instagram:hover .tooltip::before {
+    background: #21182a;
+}
+
 @media (prefers-reduced-motion: reduce) {
     html {
         scroll-behavior: auto;
