@@ -1108,3 +1108,14 @@ iframe {
         transform: translate(-50%, -50%) rotate(-45deg);
     }
 }
+
+/* Keep the fixed navigation above every section and decorative layer */
+.intro {
+    position: relative;
+    z-index: 10;
+}
+
+.site-nav {
+    z-index: 10000;
+    isolation: isolate;
+}
