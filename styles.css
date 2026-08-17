@@ -255,17 +255,6 @@ body {
     font-size: 1.5em;
 }
 
-.map-container {
-    display: flex;
-    align-items: center; /* aligne verticalement le texte au centre de l'iframe */
-    gap: 20px;
-    background-image: url('./img/6195678.jpg');
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    margin: 2% 0;
-}
-
 iframe {
     width: 570px; /* largeur de l'iframe */
     height: 400px; /* hauteur de l'iframe */
@@ -870,11 +859,6 @@ iframe {
         line-height: 1.5;
     }
 
-    .map-container {
-        margin: 1.5rem 0;
-        padding: 0;
-    }
-
     iframe {
         height: min(75vw, 360px);
     }
@@ -1152,10 +1136,6 @@ iframe {
     font-weight: 700;
 }
 
-.accesHoraires > p:nth-of-type(2) {
-    color: #665d68;
-}
-
 .accesHoraires > #planning {
     height: 0;
     scroll-margin-top: 5rem;
@@ -1182,36 +1162,19 @@ iframe {
 }
 
 .accesHoraires > .map-container {
-    position: relative;
     display: flex;
-    width: 100%;
-    min-height: 400px;
-    margin: 2rem 0 0;
-    padding: 1rem;
-    border-radius: 1.25rem;
-    background: #e8e3df;
-    box-shadow: 0 1rem 2.5rem rgba(80, 13, 65, .12);
+    flex-direction: column;
 }
 
-.accesHoraires > .map-container > p {
-    position: absolute;
-    top: 1.5rem;
-    left: 50%;
-    z-index: 1;
-    width: max-content;
-    max-width: calc(100% - 3rem);
-    margin: 0;
-    padding: .65rem .9rem;
-    border-radius: .5rem;
-    background: rgba(33, 24, 42, .82);
-    color: white;
+.accesHoraires > .map-container > address {
+    margin: 0 0 1rem;
     font-weight: 700;
     text-align: center;
-    transform: translateX(-50%);
+    font-style: normal;
 }
 
 .accesHoraires > .map-container iframe {
-    width: min(100%, 700px);
+    width: 100%;
     height: 400px;
     border: 0;
     border-radius: .75rem;
@@ -1230,10 +1193,8 @@ iframe {
         padding: .5rem;
     }
 
-    .accesHoraires > .map-container > p {
-        top: 1rem;
-        width: calc(100% - 2rem);
-        max-width: none;
+    .accesHoraires > .map-container > address {
+        margin-bottom: .75rem;
         font-size: .85rem;
     }
 
