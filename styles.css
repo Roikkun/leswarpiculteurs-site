@@ -1,0 +1,506 @@
+html{
+    font-family: "Quicksand", sans-serif;
+    scroll-behavior: smooth;
+}
+
+.intro {
+    height: 100vh;
+    width: 100%;
+    background-image: url('./img/img/intro.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 0;
+    margin: 0;
+}
+
+.intro .soustitre{
+    color: white;
+    font-size: 2em;
+    position: absolute;
+    display: flex;
+    bottom:50px;
+    justify-content: center;
+    width:100%;
+}
+
+.menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 80px;
+    width: 100%;
+    background-color: transparent; /* Initialement transparent */
+    transition: background-color 0.3s ease; /* Pour une transition fluide */
+    z-index: 1000; /* Assurez-vous qu'il reste au-dessus du contenu */
+}
+
+.menu.scrolled {
+    background-color: rgba(80, 13, 65, 0.6); /* Couleur de fond aprÃ¨s dÃ©filement */
+}
+
+a {
+    color: rgba(80, 13, 65, 0.6);
+}
+
+a.tiny{
+    font-size: 0.7em;
+}
+
+.menu h2 {
+    float: left;
+    text-align: center;
+    width: 21%;
+    margin: 2%;
+}
+
+.menu a {
+    text-decoration: none;
+    font-family: "Quicksand", sans-serif;
+    color: #b6d8d2;
+}
+
+.menu a:hover {
+    color: #719991;
+}
+
+h1, h2, h3, h4{
+    font-family: "Quicksand", sans-serif;
+    margin: 8%;
+}
+
+h1.titre{
+    margin: 4%;
+}
+
+.asso {
+    height: auto;
+    width: 100%;
+    text-align: center;
+}
+
+.cards-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 50px;
+    width: 80%;
+    margin: 0 auto;
+}
+
+/* .card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid #b6d8d2;
+
+    border-radius: 8px;
+    box-shadow: 0px 4px 8px rgba(114, 189, 176, 0.1);
+
+
+} */
+
+.card {
+    position: relative;
+
+    background-color: white;
+    font-family: "Quicksand", sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    gap: 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    text-align: justify;
+    h3{
+        margin-top: 2%;
+        margin-bottom: 0;
+    }
+
+    p{
+        margin-left: 8%;
+        margin-right: 8%;
+        margin-top:0;
+        margin-bottom:8%;
+    }
+
+}
+
+.card::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    left: -5px;
+    margin: auto;
+    width: 430px;
+    height: 628px;
+    border-radius: 10px;
+    background: linear-gradient(-45deg, #e81cff 0%, #40c9ff 100% );
+    z-index: -10;
+    pointer-events: none;
+    transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.card::after {
+    content: "";
+    z-index: -1;
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(-45deg, #fc00ff 0%, #00dbde 100% );
+    transform: translate3d(0, 0, 0) scale(0.95);
+    filter: blur(20px);
+}
+
+.heading {
+    font-size: 20px;
+    text-transform: capitalize;
+    font-weight: 700;
+}
+
+.card p:not(.heading) {
+    font-size: 14px;
+}
+
+.card p:last-child {
+
+    font-weight: 600;
+}
+
+.card:hover::after {
+    filter: blur(30px);
+}
+
+.card:hover::before {
+    transform: rotate(-90deg) scaleX(1.34) scaleY(0.77);
+}
+
+#imgJeux{
+    height: 400px;
+    object-fit: cover;
+}
+
+#imgJeux2{
+    height: 533px;
+    object-fit: cover;
+}
+
+#imgJeux4{
+    height: 550px;
+    object-fit: cover;
+}
+
+.imgAsso img {
+    width: 100%;
+    height: auto;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin:0;
+}
+.contact {
+    text-align:center;
+}
+.contact img {
+    width: 20px;
+    height: 20px;
+}
+.planning {
+    display: grid;
+    max-width: 900px;
+    gap: 1px;
+    margin: 0 auto;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    overflow: hidden;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.column {
+    padding: 10px;
+}
+
+.days, .events, .public-events {
+    padding: 5px;
+}
+
+.header {
+    font-weight: bold;
+    padding: 10px;
+    background-color: #0b2c7d;
+    text-align: center;
+    color: white;
+}
+
+.day, .event, .public-event {
+    min-height: 40px;
+    border-radius: 5px;
+    text-align: center;
+    margin: 1%;
+}
+
+
+.day:hover, .event:hover, .public-event:hover {
+    background-color: #b3e0d6;
+    cursor: pointer;
+}
+
+.accesHoraires{
+    text-align: center;
+    align-items: flex-start;
+}
+
+.accesHoraires p{
+    font-size: 1.5em;
+}
+
+.map-container {
+    display: flex;
+    align-items: center; /* aligne verticalement le texte au centre de l'iframe */
+    gap: 20px;
+    background-image: url('./img/img/6195678.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin: 2% 0;
+}
+
+iframe {
+    width: 570px; /* largeur de l'iframe */
+    height: 400px; /* hauteur de l'iframe */
+}
+
+.address {
+    font-size: 16px; /* ajustement de la taille de la police */
+    max-width: 300px; /* limite la largeur de l'adresse si nÃ©cessaire */
+}
+
+/* Style du tableau principal */
+.planning-table {
+    margin: auto;
+    width: 80%;
+    border-collapse: collapse;
+    color: #0B2C7D;
+    font-family: "Quicksand", sans-serif;
+}
+
+/* Style de lâ€™en-tÃªte */
+.planning-table thead th {
+    background-color: #0B2C7D;
+    color: #ffffff;
+    padding: 10px;
+    font-size: 18px;
+    text-align: center;
+    font-family: "Quicksand", sans-serif;
+
+}
+
+/* Style des lignes du tableau */
+.planning-table tbody td {
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+    font-family: "Quicksand", sans-serif;
+}
+
+/* Couleur alternÃ©e pour les lignes */
+.planning-table tbody tr:nth-child(even) {
+    background-color: #f2f2f2;
+    font-family: "Quicksand", sans-serif;
+}
+
+/* Style pour les Ã©vÃ©nements rÃ©servÃ©s aux adhÃ©rents */
+.planning-table tbody td:nth-child(2) {
+    color: #0B2C7D;
+    font-weight: bold;
+    font-family: "Quicksand", sans-serif;
+}
+
+/* Style pour les Ã©vÃ©nements ouverts au public */
+.planning-table tbody td:nth-child(3) {
+    font-family: "Quicksand", sans-serif;
+    color: #0B2C7D;
+    font-weight: bold;
+}
+
+/* Effet de survol sur chaque ligne */
+.planning-table tbody tr:hover {
+    background-color: #e0f7fa;
+    font-family: "Quicksand", sans-serif;
+    transition: 0.3s;
+}
+.jouerAvecNous{
+    height: 100vh;
+    text-align: center;
+    margin: 5%;
+}
+/* Container principal */
+.progress-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    width: 100%;
+    max-width: 600px;
+    margin: auto;
+}
+
+.step-card {
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 50px;
+    overflow: hidden;
+    transition: transform 0.3s;
+}
+
+.step-card.left {
+    flex-direction: row;
+    text-align: left;
+}
+
+.step-card.right {
+    flex-direction: row-reverse;
+    text-align: right;
+}
+
+.step-card img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.step-card .content {
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.step-card h3 {
+    margin: 0;
+    font-size: 1.2rem;
+    color: #333;
+}
+
+.step-card .description {
+    display: none;
+    margin-top: 0.5rem;
+    font-size: 0.9rem;
+    color: #666;
+}
+
+.step-card:hover {
+    transform: scale(1.02);
+}
+
+.step-card:hover .description {
+    display: block;
+}
+
+
+.connector {
+    width: 50px;
+    height: 4px;
+    background-color: #B93270;
+    margin: 0 10px;
+    border-radius: 2px;
+}
+
+.step:last-child .connector {
+    display: none;
+}
+
+.wrapper {
+    display: flex;
+    list-style: none;
+    height: auto; /* Ajustable selon vos besoins */
+    padding-top: 40px;
+    font-family: "Poppins", sans-serif;
+    justify-content: center;
+    gap: 20px; /* Pour gÃ©rer l'espacement entre les icÃ´nes */
+    padding-right: 30px;
+}
+
+.wrapper .icon {
+    position: relative;
+    background: #fff;
+    border-radius: 50%;
+    margin: 10px;
+    width: 100px;
+    height: 100px;
+    font-size: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: all 0.2s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.wrapper .icon a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    color: inherit;
+}
+
+.wrapper .tooltip {
+    position: absolute;
+    bottom: 120%; /* Place au-dessus de l'icÃ´ne */
+    left: 50%; /* Centrer horizontalement */
+    transform: translateX(-50%); /* Ajustement pour le centrage */
+    font-size: 14px;
+    background: #fff;
+    color: #000; /* Couleur du texte */
+    padding: 5px 8px;
+    border-radius: 5px;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+    opacity: 0; /* CachÃ© par dÃ©faut */
+    pointer-events: none;
+    transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.wrapper .tooltip::before {
+    position: absolute;
+    content: "";
+    height: 8px;
+    width: 8px;
+    background: #fff;
+    bottom: -4px; /* Pointe de la flÃ¨che */
+    left: 50%;
+    transform: translateX(-50%) rotate(45deg);
+    transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.wrapper .icon:hover .tooltip {
+    opacity: 1; /* Afficher au survol */
+    visibility: visible;
+    bottom: 140%; /* LÃ©gÃ¨rement au-dessus pour l'animation */
+}
+
+
+.wrapper .facebook:hover,
+.wrapper .facebook:hover .tooltip,
+.wrapper .facebook:hover .tooltip::before {
+    background: rgba(80, 13, 65, 0.4);
+    color: #fff;
+}
+
+.wrapper .discord:hover,
+.wrapper .discord:hover .tooltip,
+.wrapper .discord:hover .tooltip::before {
+    background: rgba(80, 13, 65, 0.4);
+    color: #fff;
+}
+
+.wrapper .instagram:hover,
+.wrapper .instagram:hover .tooltip,
+.wrapper .instagram:hover .tooltip::before {
+    background: rgba(80, 13, 65, 0.4);
+    color: #fff;
+}
