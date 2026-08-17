@@ -960,3 +960,46 @@ iframe {
         height: 3.5rem;
     }
 }
+
+/* Keep the burger-to-close transition centered and symmetrical */
+@media (max-width: 700px) {
+    .menu-toggle {
+        position: relative;
+        width: 2.25rem;
+        height: 2.25rem;
+        padding: 0;
+    }
+
+    .menu-toggle > span:not(.sr-only) {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 1.6rem;
+        margin: 0;
+        transform: translate(-50%, -50%);
+    }
+
+    .menu-toggle > span:nth-child(2) {
+        transform: translate(-50%, calc(-50% - .3rem));
+    }
+
+    .menu-toggle > span:nth-child(3) {
+        transform: translate(-50%, -50%);
+    }
+
+    .menu-toggle > span:nth-child(4) {
+        transform: translate(-50%, calc(-50% + .3rem));
+    }
+
+    .menu-open .menu-toggle > span:nth-child(2) {
+        transform: translate(-50%, -50%) rotate(45deg);
+    }
+
+    .menu-open .menu-toggle > span:nth-child(3) {
+        transform: translate(-50%, -50%) scaleX(0);
+    }
+
+    .menu-open .menu-toggle > span:nth-child(4) {
+        transform: translate(-50%, -50%) rotate(-45deg);
+    }
+}
