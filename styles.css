@@ -6,7 +6,7 @@ html{
 .intro {
     height: 100vh;
     width: 100%;
-    background-image: url('./img/img/intro.png');
+    background-image: url('./img/intro.png');
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -260,7 +260,7 @@ body {
     display: flex;
     align-items: center; /* aligne verticalement le texte au centre de l'iframe */
     gap: 20px;
-    background-image: url('./img/img/6195678.jpg');
+    background-image: url('./img/6195678.jpg');
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
