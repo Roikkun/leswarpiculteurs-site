@@ -847,6 +847,15 @@ html {
     left: -9999px;
 }
 
+@media (max-width: 700px) {
+    .contact .titre a {
+        display: inline-block;
+        max-width: 100%;
+        font-size: clamp(.85rem, 4.5vw, 1.15rem);
+        overflow-wrap: anywhere;
+    }
+}
+
 @media (prefers-reduced-motion: reduce) {
     html {
         scroll-behavior: auto;
