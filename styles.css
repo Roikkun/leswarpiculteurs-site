@@ -289,7 +289,7 @@ iframe {
 }
 
 .calendar figcaption {
-    margin-top: 0.75rem;
+    margin-bottom: 0.75rem;
     font-size: 0.9rem;
 }
 
@@ -1164,6 +1164,8 @@ iframe {
 .accesHoraires > .map-container {
     display: flex;
     flex-direction: column;
+    width: 100%;
+    gap: 0;
 }
 
 .accesHoraires > .map-container > address {
@@ -1174,8 +1176,11 @@ iframe {
 }
 
 .accesHoraires > .map-container iframe {
+    display: block;
+    flex: 0 0 auto;
     width: 100%;
     height: 400px;
+    max-width: 100%;
     border: 0;
     border-radius: .75rem;
     box-shadow: 0 .75rem 2rem rgba(0, 0, 0, .2);
@@ -1199,6 +1204,6 @@ iframe {
     }
 
     .accesHoraires > .map-container iframe {
-        height: min(80vw, 360px);
+        height: clamp(280px, 80vw, 360px);
     }
 }
