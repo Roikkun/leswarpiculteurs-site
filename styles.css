@@ -789,3 +789,174 @@ html {
         transition-duration: .01ms !important;
     }
 }
+
+/* Shared responsive foundations */
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+body {
+    overflow-x: hidden;
+}
+
+img {
+    max-width: 100%;
+}
+
+.cards-container {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: clamp(1.5rem, 4vw, 3rem);
+}
+
+.card::before {
+    right: 0;
+    left: 0;
+    width: auto;
+    height: 100%;
+}
+
+.map-container {
+    justify-content: center;
+    width: 100%;
+}
+
+iframe {
+    width: min(570px, 100%);
+    max-width: 100%;
+}
+
+.jouerAvecNous {
+    min-height: auto;
+    height: auto;
+}
+
+.progress-container {
+    padding: 0 1rem;
+}
+
+.step-card {
+    max-width: 100%;
+}
+
+@media (max-width: 700px) {
+    h1.titre {
+        margin: 3rem 1rem 1.5rem;
+        font-size: clamp(1.8rem, 8vw, 2.5rem);
+    }
+
+    .cards-container {
+        grid-template-columns: 1fr;
+        width: min(100% - 2rem, 32rem);
+        gap: 2rem;
+    }
+
+    .card {
+        min-width: 0;
+    }
+
+    .card::before {
+        transform: none;
+    }
+
+    .card:hover::before {
+        transform: none;
+    }
+
+    .accesHoraires {
+        padding: 0 1rem;
+    }
+
+    .accesHoraires p {
+        font-size: 1rem;
+        line-height: 1.5;
+    }
+
+    .map-container {
+        margin: 1.5rem 0;
+        padding: 0;
+    }
+
+    iframe {
+        height: min(75vw, 360px);
+    }
+
+    .calendar {
+        width: calc(100% - 2rem);
+        margin: 1.5rem auto;
+    }
+
+    .progress-container {
+        width: 100%;
+        padding: 0 1rem;
+    }
+
+    .step-card,
+    .step-card.left,
+    .step-card.right {
+        flex-direction: row;
+        align-items: flex-start;
+        border-radius: 1.5rem;
+        text-align: left;
+    }
+
+    .step-card img {
+        flex: 0 0 4.25rem;
+        width: 4.25rem;
+        height: 4.25rem;
+    }
+
+    .step-card .content {
+        min-width: 0;
+        padding: .25rem .75rem;
+    }
+
+    .step-card h3 {
+        font-size: 1rem;
+        line-height: 1.25;
+    }
+
+    .step-card .description,
+    .step-card:hover .description {
+        display: block;
+        margin-bottom: 0;
+        font-size: .85rem;
+        line-height: 1.4;
+    }
+
+    .wrapper {
+        flex-wrap: wrap;
+        gap: .5rem;
+        padding: 1rem 0 2rem;
+    }
+
+    .wrapper .icon {
+        width: 4.25rem;
+        height: 4.25rem;
+        margin: .25rem;
+    }
+
+    .wrapper .tooltip {
+        display: none;
+    }
+}
+
+@media (max-width: 380px) {
+    .brand {
+        font-size: .9rem;
+    }
+
+    .brand-mark {
+        width: 2rem;
+        height: 2rem;
+    }
+
+    .hero-description {
+        font-size: .95rem;
+    }
+
+    .step-card img {
+        flex-basis: 3.5rem;
+        width: 3.5rem;
+        height: 3.5rem;
+    }
+}
