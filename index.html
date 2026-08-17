@@ -375,6 +375,12 @@ document.addEventListener('DOMContentLoaded', () => {
     const menu = document.querySelector('.menu-links');
     const menuLinks = menu.querySelectorAll('a');
 
+    const closeMenu = () => {
+        navigation.classList.remove('menu-open');
+        toggle.setAttribute('aria-expanded', 'false');
+        toggle.querySelector('.sr-only').textContent = 'Ouvrir le menu';
+    };
+
     window.addEventListener('scroll', () => {
         if (window.scrollY > 0) {
             navigation.classList.add('scrolled');
@@ -391,10 +397,20 @@ document.addEventListener('DOMContentLoaded', () => {
 
     menuLinks.forEach((link) => {
         link.addEventListener('click', () => {
-            navigation.classList.remove('menu-open');
-            toggle.setAttribute('aria-expanded', 'false');
-            toggle.querySelector('.sr-only').textContent = 'Ouvrir le menu';
+            closeMenu();
         });
+    });
+
+    document.addEventListener('click', (event) => {
+        if (!navigation.contains(event.target)) {
+            closeMenu();
+        }
+    });
+
+    document.addEventListener('keydown', (event) => {
+        if (event.key === 'Escape') {
+            closeMenu();
+        }
     });
 });
 </script>
