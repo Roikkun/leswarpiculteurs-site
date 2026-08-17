@@ -48,10 +48,32 @@ a {
     min-height: 100svh;
     overflow: hidden;
     isolation: isolate;
-    background-image: linear-gradient(90deg, rgba(17, 7, 25, 0.78), rgba(17, 7, 25, 0.12)), url('./img/intro.png');
+    background-color: var(--header-ink);
+    background-image: linear-gradient(90deg, rgba(17, 7, 25, 0.78), rgba(17, 7, 25, 0.12)), url('./img/header.png');
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+}
+
+.hero-bg {
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    overflow: hidden;
+}
+
+.hero-bg img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.hero-bg::after {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(90deg, rgba(17, 7, 25, 0.78), rgba(17, 7, 25, 0.12));
+    content: "";
 }
 
 .site-nav {
