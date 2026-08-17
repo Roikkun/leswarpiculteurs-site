@@ -11,16 +11,35 @@
     <link href="https://fonts.googleapis.com/css2?family=Funnel+Display:wght@300..800&family=Quicksand:wght@300..700&family=Sour+Gummy:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet"></head>
 <body>
 
-<div class="intro">
-    <div class="menu">
-        <h2><a href="#asso">L'association</a></h2>
-        <h2><a href="#accesHoraires">Horaire et accès</a></h2>
-        <h2><a href="#jouerAvecNous">Jouer avec nous</a></h2>
-        <h2><a href="#contact">Contact</a></h2>
-    </div>
+<header class="intro" id="top">
+    <nav class="site-nav" aria-label="Navigation principale">
+        <a class="brand" href="#top" aria-label="Retour en haut de la page">
+            <span class="brand-mark">W</span>
+            <span>Warpiculteurs</span>
+        </a>
 
-    <div class="soustitre">Association Villemombloise de Wargame</div>
-</div>
+        <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="primary-nav">
+            <span class="sr-only">Ouvrir le menu</span>
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+
+        <div class="menu-links" id="primary-nav">
+            <a href="#asso">L'association</a>
+            <a href="#accesHoraires">Horaires & accès</a>
+            <a href="#jouerAvecNous">Jouer avec nous</a>
+            <a href="#contact">Contact</a>
+        </div>
+    </nav>
+
+    <div class="hero-content">
+        <p class="eyebrow">Association villemombloise de wargame</p>
+        <h1>Peins, joue,<br><em>raconte.</em></h1>
+        <p class="hero-description">Une communauté de passionnés de jeux de figurines, à Villemomble.</p>
+        <a class="hero-link" href="#asso">Découvrir l'association <span aria-hidden="true">↓</span></a>
+    </div>
+</header>
 <a id="asso">&nbsp;</a>
 
 <div class="asso">
@@ -351,14 +370,31 @@
 
 <script>
 document.addEventListener('DOMContentLoaded', () => {
-    const menu = document.querySelector('.menu');
+    const navigation = document.querySelector('.site-nav');
+    const toggle = document.querySelector('.menu-toggle');
+    const menu = document.querySelector('.menu-links');
+    const menuLinks = menu.querySelectorAll('a');
 
     window.addEventListener('scroll', () => {
         if (window.scrollY > 0) {
-            menu.classList.add('scrolled');
+            navigation.classList.add('scrolled');
         } else {
-            menu.classList.remove('scrolled');
+            navigation.classList.remove('scrolled');
         }
+    });
+
+    toggle.addEventListener('click', () => {
+        const isOpen = navigation.classList.toggle('menu-open');
+        toggle.setAttribute('aria-expanded', String(isOpen));
+        toggle.querySelector('.sr-only').textContent = isOpen ? 'Fermer le menu' : 'Ouvrir le menu';
+    });
+
+    menuLinks.forEach((link) => {
+        link.addEventListener('click', () => {
+            navigation.classList.remove('menu-open');
+            toggle.setAttribute('aria-expanded', 'false');
+            toggle.querySelector('.sr-only').textContent = 'Ouvrir le menu';
+        });
     });
 });
 </script>
