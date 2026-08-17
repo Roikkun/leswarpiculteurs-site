@@ -856,6 +856,110 @@ html {
     }
 }
 
+/* Social links: one stable component for every platform */
+.contact .wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    margin: 0;
+    padding: 1rem 0 0;
+}
+
+.contact .wrapper .icon {
+    position: relative;
+    display: grid;
+    place-items: center;
+    width: 4.25rem;
+    height: 4.25rem;
+    margin: 0;
+    border: 1px solid rgba(80, 13, 65, .12);
+    border-radius: 50%;
+    background: white;
+    box-shadow: 0 .5rem 1.25rem rgba(80, 13, 65, .1);
+    color: #500d41;
+    transition: color .2s ease, background-color .2s ease, transform .2s ease;
+}
+
+.contact .wrapper .icon a {
+    display: grid;
+    place-items: center;
+    width: 100%;
+    height: 100%;
+    color: inherit;
+    text-decoration: none;
+}
+
+.contact .wrapper .icon svg {
+    display: block;
+    width: 1.35rem;
+    height: 1.35rem;
+    fill: currentColor;
+}
+
+.contact .wrapper .icon.discord svg {
+    width: 1.6rem;
+    height: 1.6rem;
+}
+
+.contact .wrapper .icon:hover,
+.contact .wrapper .icon:focus-within {
+    background: #500d41;
+    color: white;
+    transform: translateY(-.25rem);
+}
+
+.contact .wrapper .tooltip {
+    position: absolute;
+    bottom: calc(100% + .75rem);
+    left: 50%;
+    z-index: 2;
+    width: max-content;
+    max-width: 8rem;
+    padding: .4rem .6rem;
+    border-radius: .4rem;
+    background: #21182a;
+    color: white;
+    font-size: .75rem;
+    line-height: 1;
+    opacity: 0;
+    pointer-events: none;
+    transform: translate(-50%, .25rem);
+    transition: opacity .2s ease, transform .2s ease;
+}
+
+.contact .wrapper .tooltip::before {
+    position: absolute;
+    bottom: -.25rem;
+    left: 50%;
+    width: .5rem;
+    height: .5rem;
+    background: #21182a;
+    content: "";
+    transform: translateX(-50%) rotate(45deg);
+}
+
+.contact .wrapper .icon:hover .tooltip,
+.contact .wrapper .icon:focus-within .tooltip {
+    opacity: 1;
+    transform: translate(-50%, 0);
+}
+
+@media (max-width: 700px) {
+    .contact .wrapper {
+        gap: .75rem;
+    }
+
+    .contact .wrapper .icon {
+        width: 3.75rem;
+        height: 3.75rem;
+    }
+
+    .contact .wrapper .tooltip {
+        display: none;
+    }
+}
+
 @media (prefers-reduced-motion: reduce) {
     html {
         scroll-behavior: auto;
