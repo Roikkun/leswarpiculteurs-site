@@ -961,6 +961,111 @@ iframe {
     }
 }
 
+/* Association cards: alternating image-and-copy editorial layout */
+.asso .cards-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    width: min(100% - 2rem, 1100px);
+    gap: clamp(1.5rem, 4vw, 3rem);
+}
+
+.asso .card {
+    display: grid;
+    grid-template-columns: minmax(220px, 42%) 1fr;
+    align-items: stretch;
+    min-width: 0;
+    overflow: hidden;
+    border: 1px solid rgba(80, 13, 65, .12);
+    border-radius: 1rem;
+    background: #fff;
+    box-shadow: 0 1rem 2.5rem rgba(80, 13, 65, .08);
+    text-align: left;
+}
+
+.asso .card::before,
+.asso .card::after {
+    display: none;
+}
+
+.asso .card .imgAsso {
+    grid-column: 1;
+    grid-row: 1 / span 2;
+    min-height: 100%;
+}
+
+.asso .card .imgAsso img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    min-height: 280px;
+    border-radius: 0;
+    object-fit: cover;
+}
+
+.asso .card h3,
+.asso .card p {
+    grid-column: 2;
+}
+
+.asso .card h3 {
+    align-self: end;
+    margin: 2.5rem 2.5rem .5rem;
+    color: #500d41;
+    font-size: clamp(1.3rem, 2vw, 1.8rem);
+}
+
+.asso .card p {
+    align-self: start;
+    margin: 0 2.5rem 2.5rem;
+    line-height: 1.65;
+}
+
+.asso .card:nth-child(even) .imgAsso {
+    grid-column: 2;
+}
+
+.asso .card:nth-child(even) h3,
+.asso .card:nth-child(even) p {
+    grid-column: 1;
+}
+
+@media (max-width: 700px) {
+    .asso .cards-container {
+        width: min(100% - 2rem, 32rem);
+    }
+
+    .asso .card,
+    .asso .card:nth-child(even) {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .asso .card .imgAsso,
+    .asso .card:nth-child(even) .imgAsso {
+        order: 0;
+        min-height: 0;
+    }
+
+    .asso .card .imgAsso img {
+        height: auto;
+        min-height: 0;
+        aspect-ratio: 16 / 10;
+    }
+
+    .asso .card h3,
+    .asso .card:nth-child(even) h3 {
+        order: 1;
+        margin: 1.5rem 1.5rem .5rem;
+    }
+
+    .asso .card p,
+    .asso .card:nth-child(even) p {
+        order: 2;
+        margin: 0 1.5rem 1.5rem;
+        line-height: 1.55;
+    }
+}
+
 /* Keep the burger-to-close transition centered and symmetrical */
 @media (max-width: 700px) {
     .menu-toggle {
