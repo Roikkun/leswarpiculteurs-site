@@ -1189,21 +1189,25 @@ iframe {
     margin: 2rem 0 0;
     padding: 1rem;
     border-radius: 1.25rem;
-    background-image: linear-gradient(rgba(33, 24, 42, .18), rgba(33, 24, 42, .18)), url('./img/6195678.jpg');
+    background: #e8e3df;
     box-shadow: 0 1rem 2.5rem rgba(80, 13, 65, .12);
 }
 
 .accesHoraires > .map-container > p {
     position: absolute;
     top: 1.5rem;
-    left: 1.5rem;
+    left: 50%;
     z-index: 1;
+    width: max-content;
+    max-width: calc(100% - 3rem);
     margin: 0;
     padding: .65rem .9rem;
     border-radius: .5rem;
     background: rgba(33, 24, 42, .82);
     color: white;
     font-weight: 700;
+    text-align: center;
+    transform: translateX(-50%);
 }
 
 .accesHoraires > .map-container iframe {
@@ -1228,8 +1232,8 @@ iframe {
 
     .accesHoraires > .map-container > p {
         top: 1rem;
-        left: 1rem;
-        right: 1rem;
+        width: calc(100% - 2rem);
+        max-width: none;
         font-size: .85rem;
     }
 
