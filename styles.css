@@ -110,7 +110,6 @@ h1.titre{
     justify-content: end;
     gap: 20px;
     border-radius: 8px;
-    cursor: pointer;
     text-align: justify;
     h3{
         margin-top: 2%;
@@ -1132,14 +1131,12 @@ iframe {
 }
 
 .accesHoraires > h1:first-child {
-    order: 0;
     margin: 0 0 .5rem;
     color: #500d41;
     font-size: clamp(2rem, 5vw, 3.5rem);
 }
 
 .accesHoraires > p {
-    order: 1;
     max-width: 42rem;
     margin: 0 auto;
     line-height: 1.6;
@@ -1160,14 +1157,8 @@ iframe {
 }
 
 .accesHoraires > #planning {
-    order: 2;
     height: 0;
     scroll-margin-top: 5rem;
-}
-
-.accesHoraires > #planning + h1,
-.accesHoraires > .calendar {
-    order: 2;
 }
 
 .accesHoraires > #planning + h1 {
@@ -1191,7 +1182,7 @@ iframe {
 }
 
 .accesHoraires > .map-container {
-    order: 3;
+    position: relative;
     display: flex;
     width: 100%;
     min-height: 400px;
@@ -1200,6 +1191,19 @@ iframe {
     border-radius: 1.25rem;
     background-image: linear-gradient(rgba(33, 24, 42, .18), rgba(33, 24, 42, .18)), url('./img/6195678.jpg');
     box-shadow: 0 1rem 2.5rem rgba(80, 13, 65, .12);
+}
+
+.accesHoraires > .map-container > p {
+    position: absolute;
+    top: 1.5rem;
+    left: 1.5rem;
+    z-index: 1;
+    margin: 0;
+    padding: .65rem .9rem;
+    border-radius: .5rem;
+    background: rgba(33, 24, 42, .82);
+    color: white;
+    font-weight: 700;
 }
 
 .accesHoraires > .map-container iframe {
@@ -1220,6 +1224,13 @@ iframe {
         min-height: 0;
         margin-top: 1.5rem;
         padding: .5rem;
+    }
+
+    .accesHoraires > .map-container > p {
+        top: 1rem;
+        left: 1rem;
+        right: 1rem;
+        font-size: .85rem;
     }
 
     .accesHoraires > .map-container iframe {
