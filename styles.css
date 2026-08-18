@@ -955,15 +955,6 @@ a {
     background: #719991;
 }
 
-/* Placeholder the association still has to fill in before publishing */
-.legal .todo {
-    padding: 0.1rem 0.4rem;
-    border-radius: 0.25rem;
-    background: #ffe8a3;
-    color: #6b4e00;
-    font-weight: 700;
-}
-
 /* Form confirmation page */
 .thanks {
     display: flex;
