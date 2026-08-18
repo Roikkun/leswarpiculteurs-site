@@ -2,6 +2,8 @@
     --header-ink: #21182a;
     --header-plum: #500d41;
     --header-mint: #b6d8d2;
+    --discord-blurple: #5865f2;
+    --discord-blurple-dark: #4752c4;
 }
 
 *, *::before, *::after {
@@ -156,6 +158,39 @@ a {
     transform-origin: left;
 }
 
+/* Discord button in the navigation bar */
+.nav-actions {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.nav-discord {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.6rem 1.05rem;
+    border-radius: 999px;
+    background: var(--discord-blurple);
+    color: white;
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    white-space: nowrap;
+    text-decoration: none;
+    transition: background-color 0.25s ease, transform 0.25s ease;
+}
+
+.nav-discord i {
+    font-size: 1.1rem;
+}
+
+.nav-discord:hover,
+.nav-discord:focus-visible {
+    background: var(--discord-blurple-dark);
+    transform: translateY(-2px);
+}
+
 .menu-toggle {
     display: none;
     border: 0;
@@ -206,6 +241,13 @@ a {
     line-height: 1.5;
 }
 
+.hero-actions {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.75rem;
+}
+
 .hero-link {
     display: inline-flex;
     align-items: center;
@@ -217,12 +259,40 @@ a {
     font-size: 0.85rem;
     font-weight: 700;
     text-decoration: none;
-    transition: background-color 0.25s ease, color 0.25s ease;
+    transition: background-color 0.25s ease, color 0.25s ease, transform 0.25s ease;
 }
 
 .hero-link:hover {
     background: var(--header-mint);
     color: var(--header-ink);
+}
+
+.hero-link-discord {
+    gap: 0.6rem;
+    padding: 0.9rem 1.4rem;
+    border-color: transparent;
+    background: var(--discord-blurple);
+    font-size: 0.95rem;
+    box-shadow: 0 0.75rem 1.75rem rgba(88, 101, 242, 0.4);
+}
+
+.hero-link-discord i {
+    font-size: 1.25rem;
+}
+
+.hero-link-discord:hover,
+.hero-link-discord:focus-visible {
+    background: var(--discord-blurple-dark);
+    color: white;
+    transform: translateY(-2px);
+}
+
+.hero-note {
+    max-width: 26rem;
+    margin: 1.1rem 0 0;
+    color: rgba(255, 255, 255, 0.72);
+    font-size: 0.85rem;
+    line-height: 1.5;
 }
 
 /* Association section */
@@ -294,6 +364,82 @@ a {
 .asso .card:nth-child(even) h3,
 .asso .card:nth-child(even) p {
     grid-column: 1;
+}
+
+/* Discord highlight banner */
+.discordBanner {
+    padding: 0 1rem clamp(3rem, 8vw, 5rem);
+}
+
+.discord-inner {
+    position: relative;
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    align-items: center;
+    gap: clamp(1.25rem, 4vw, 2.5rem);
+    width: min(100% - 1rem, 1100px);
+    margin: 0 auto;
+    overflow: hidden;
+    padding: clamp(1.75rem, 4vw, 2.75rem);
+    border-radius: 1.5rem;
+    background: linear-gradient(120deg, var(--discord-blurple), #7a5cf0 55%, var(--header-plum));
+    color: white;
+    box-shadow: 0 1.25rem 3rem rgba(88, 101, 242, 0.28);
+    text-align: left;
+}
+
+.discord-glyph {
+    font-size: clamp(3rem, 7vw, 4.5rem);
+    line-height: 1;
+    opacity: 0.95;
+}
+
+.discord-eyebrow {
+    margin: 0 0 0.5rem;
+    color: rgba(255, 255, 255, 0.85);
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+}
+
+.discord-text h2 {
+    margin: 0 0 0.75rem;
+    font-size: clamp(1.5rem, 3.5vw, 2.25rem);
+    line-height: 1.15;
+}
+
+.discord-text p:last-child {
+    margin: 0;
+    max-width: 46rem;
+    color: rgba(255, 255, 255, 0.88);
+    line-height: 1.6;
+}
+
+.discord-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    padding: 0.95rem 1.5rem;
+    border-radius: 999px;
+    background: white;
+    color: var(--discord-blurple-dark);
+    font-size: 0.95rem;
+    font-weight: 700;
+    white-space: nowrap;
+    text-decoration: none;
+    transition: background-color 0.25s ease, color 0.25s ease, transform 0.25s ease;
+}
+
+.discord-button i {
+    font-size: 1.25rem;
+}
+
+.discord-button:hover,
+.discord-button:focus-visible {
+    background: var(--header-ink);
+    color: white;
+    transform: translateY(-2px);
 }
 
 /* Schedule and location section */
@@ -457,6 +603,31 @@ a {
     line-height: 1.5;
 }
 
+.jouerAvecNous .step-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-top: 0.85rem;
+    padding: 0.6rem 1.05rem;
+    border-radius: 999px;
+    background: var(--discord-blurple);
+    color: white;
+    font-size: 0.85rem;
+    font-weight: 700;
+    text-decoration: none;
+    transition: background-color 0.25s ease, transform 0.25s ease;
+}
+
+.jouerAvecNous .step-link i {
+    font-size: 1.05rem;
+}
+
+.jouerAvecNous .step-link:hover,
+.jouerAvecNous .step-link:focus-visible {
+    background: var(--discord-blurple-dark);
+    transform: translateY(-2px);
+}
+
 /* Contact section */
 .contact {
     padding: clamp(4rem, 9vw, 8rem) 1rem;
@@ -477,6 +648,19 @@ a {
 
 .contact .titre a:hover {
     text-decoration: underline;
+}
+
+.contact-hint {
+    max-width: 34rem;
+    margin: -1.25rem auto 2rem;
+    color: var(--header-ink);
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+.contact-hint a {
+    color: var(--discord-blurple-dark);
+    font-weight: 700;
 }
 
 .contact-form {
@@ -728,6 +912,24 @@ a {
         display: none;
     }
 
+    /* Discord stays a one-tap icon button, outside the collapsible menu */
+    .nav-discord {
+        display: grid;
+        place-items: center;
+        width: 2.5rem;
+        height: 2.5rem;
+        padding: 0;
+        border-radius: 50%;
+    }
+
+    .nav-discord-label {
+        display: none;
+    }
+
+    .nav-discord i {
+        font-size: 1.2rem;
+    }
+
     .hero-content {
         right: 1.5rem;
         left: 1.5rem;
@@ -735,6 +937,30 @@ a {
 
     .hero-content h1 {
         font-size: clamp(3.5rem, 18vw, 6rem);
+    }
+
+    .hero-actions {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .hero-link {
+        justify-content: center;
+    }
+
+    .hero-note {
+        font-size: 0.8rem;
+    }
+
+    .discord-inner {
+        grid-template-columns: 1fr;
+        justify-items: center;
+        text-align: center;
+    }
+
+    .discord-button {
+        width: 100%;
+        justify-content: center;
     }
 
     .asso .cards-container {

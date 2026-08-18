@@ -73,6 +73,30 @@ These images appear as circular avatar icons (vignettes) next to each step in th
 
 ---
 
+## Discord Invite Link
+
+Discord is presented as the association's primary information channel, so the invite URL
+(`https://discord.gg/ApjmxBuTHG`) is intentionally repeated across several entry points in `index.html`:
+
+| Entry point | Role |
+| :--- | :--- |
+| `Schema.org` `sameAs` (in `<head>`) | Declares the server to search engines |
+| Navigation bar (`.nav-discord`) | Always-visible button; collapses to a circular icon on mobile, outside the burger menu |
+| Hero primary call to action (`.hero-link-discord`) | Main action above the fold |
+| Discord banner (`#discord`) | Dedicated "everything happens on Discord" section |
+| Step 1 of `#jouerAvecNous` (`.step-link`) | Invite inside the onboarding timeline |
+| Contact hint (`.contact-hint`) | Points visitors to Discord instead of the form for quick answers |
+| Social icons list (`.wrapper .icon.discord`) | Footer-style social link |
+
+> **If the invite ever changes,** replace **every** occurrence — a stale link in one spot is easy to miss.
+> Find them all with `grep -n "discord.gg" index.html` (7 occurrences as of the last update).
+> Prefer a permanent (non-expiring) invite so the site never points at a dead link.
+
+The Discord brand colour is defined once in `styles.css` as the `--discord-blurple` /
+`--discord-blurple-dark` custom properties.
+
+---
+
 ## How to Update Images
 
 ### Option A: Via GitHub Web Interface (Easiest)

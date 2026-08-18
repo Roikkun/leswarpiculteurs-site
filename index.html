@@ -83,18 +83,26 @@
             <span>Warpiculteurs</span>
         </a>
 
-        <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="primary-nav">
-            <span class="sr-only">Ouvrir le menu</span>
-            <span></span>
-            <span></span>
-            <span></span>
-        </button>
-
         <div class="menu-links" id="primary-nav">
             <a href="#asso">L'association</a>
             <a href="#accesHoraires">Horaires & accès</a>
             <a href="#jouerAvecNous">Jouer avec nous</a>
             <a href="#contact">Contact</a>
+        </div>
+
+        <div class="nav-actions">
+            <a class="nav-discord" href="https://discord.gg/ApjmxBuTHG" target="_blank" rel="noopener noreferrer"
+               aria-label="Rejoindre le Discord des Warpiculteurs">
+                <i class="fa-brands fa-discord" aria-hidden="true"></i>
+                <span class="nav-discord-label">Rejoindre le Discord</span>
+            </a>
+
+            <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="primary-nav">
+                <span class="sr-only">Ouvrir le menu</span>
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
         </div>
     </nav>
 
@@ -102,7 +110,14 @@
         <p class="eyebrow">Association villemombloise de wargame</p>
         <h1>Peins, joue,<br><em>raconte.</em></h1>
         <p class="hero-description">Une communauté de passionnés de jeux de figurines, à Villemomble.</p>
-        <a class="hero-link" href="#asso">Découvrir l'association <span aria-hidden="true">↓</span></a>
+        <div class="hero-actions">
+            <a class="hero-link hero-link-discord" href="https://discord.gg/ApjmxBuTHG" target="_blank" rel="noopener noreferrer">
+                <i class="fa-brands fa-discord" aria-hidden="true"></i>
+                Rejoindre le Discord
+            </a>
+            <a class="hero-link" href="#asso">Découvrir l'association <span aria-hidden="true">↓</span></a>
+        </div>
+        <p class="hero-note">Le Discord est notre canal principal : actualités, planning et organisation des parties.</p>
     </div>
 </header>
 
@@ -154,6 +169,25 @@
     </div>
 </section>
 
+<section class="discordBanner" id="discord">
+    <div class="discord-inner">
+        <i class="fa-brands fa-discord discord-glyph" aria-hidden="true"></i>
+
+        <div class="discord-text">
+            <p class="discord-eyebrow">Notre source d'information n°1</p>
+            <h2>Tout se passe sur Discord</h2>
+            <p>Annonces, planning des samedis, inscriptions aux tournois, recherche d'adversaires, entraide
+                peinture : le Discord est le cœur de l'association. L'accès est libre, gratuit et sans
+                engagement, même si tu n'es pas encore adhérent.</p>
+        </div>
+
+        <a class="discord-button" href="https://discord.gg/ApjmxBuTHG" target="_blank" rel="noopener noreferrer">
+            <i class="fa-brands fa-discord" aria-hidden="true"></i>
+            Rejoindre le Discord
+        </a>
+    </div>
+</section>
+
 <section class="accesHoraires" id="accesHoraires">
     <h1 class="titre">Horaire et accès</h1>
     <p>Un samedi sur deux, de 8h30 à 18h30</p>
@@ -185,7 +219,11 @@
             <img src="./img/join-discord.png" alt="Nous rejoindre sur Discord">
             <div class="content">
                 <h3>1. Rejoins-nous sur Discord</h3>
-                <p class="description">Découvre nos communautés et partage ta passion !</p>
+                <p class="description">C'est là que tout se passe : actualités, planning et organisation des parties.</p>
+                <a class="step-link" href="https://discord.gg/ApjmxBuTHG" target="_blank" rel="noopener noreferrer">
+                    <i class="fa-brands fa-discord" aria-hidden="true"></i>
+                    Ouvrir l'invitation <span aria-hidden="true">→</span>
+                </a>
             </div>
         </div>
 
@@ -218,6 +256,10 @@
 <section class="contact" id="contact">
     <h1 class="titre">Nous contacter<br/>
         <a href="mailto:leswarpiculteurs@gmail.com" target="_blank" rel="noopener noreferrer">leswarpiculteurs@gmail.com</a></h1>
+
+    <p class="contact-hint">Pour une réponse rapide, le plus simple reste le
+        <a href="https://discord.gg/ApjmxBuTHG" target="_blank" rel="noopener noreferrer">Discord</a> :
+        on y est tous les jours.</p>
 
     <form class="contact-form" action="https://formsubmit.co/leswarpiculteurs@gmail.com" method="POST" accept-charset="UTF-8">
         <input type="hidden" name="_subject" value="Nouveau message depuis le site des Warpiculteurs">
