@@ -47,14 +47,13 @@ a {
 .intro {
     position: relative;
     z-index: 10;
+    display: flex;
+    align-items: center;
     min-height: 100svh;
+    padding: 8rem clamp(1.5rem, 10vw, 9rem) 5rem;
     overflow: hidden;
     isolation: isolate;
     background-color: var(--header-ink);
-    background-image: linear-gradient(90deg, rgba(17, 7, 25, 0.78), rgba(17, 7, 25, 0.12)), url('./img/header.png');
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
 }
 
 .hero-bg {
@@ -200,12 +199,8 @@ a {
 }
 
 .hero-content {
-    position: absolute;
-    top: 50%;
-    left: clamp(1.5rem, 10vw, 9rem);
     max-width: 38rem;
     color: white;
-    transform: translateY(-42%);
 }
 
 .eyebrow {
@@ -628,6 +623,18 @@ a {
     transform: translateY(-2px);
 }
 
+/* Membership call to action: mint rather than Discord blurple, so the two
+   actions in the timeline stay visually distinct. */
+.jouerAvecNous .step-link-join {
+    background: var(--header-mint);
+    color: var(--header-ink);
+}
+
+.jouerAvecNous .step-link-join:hover,
+.jouerAvecNous .step-link-join:focus-visible {
+    background: white;
+}
+
 /* Contact section */
 .contact {
     padding: clamp(4rem, 9vw, 8rem) 1rem;
@@ -729,6 +736,18 @@ a {
     left: -9999px;
 }
 
+.form-privacy {
+    margin: 0;
+    color: #6b5f68;
+    font-size: 0.8rem;
+    line-height: 1.5;
+}
+
+.form-privacy a {
+    color: var(--header-plum);
+    font-weight: 700;
+}
+
 /* Social links */
 .contact .wrapper {
     display: flex;
@@ -824,6 +843,197 @@ a {
     background: var(--header-ink);
     content: "";
     transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+/* Site footer */
+.site-footer {
+    padding: 2.5rem 1rem;
+    background: var(--header-ink);
+    color: rgba(255, 255, 255, 0.75);
+    font-size: 0.85rem;
+}
+
+.footer-inner {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.25rem;
+    width: min(100% - 1rem, 1100px);
+    margin: 0 auto;
+}
+
+.footer-brand {
+    margin: 0;
+    color: white;
+    font-weight: 700;
+    line-height: 1.5;
+}
+
+.footer-brand span {
+    color: rgba(255, 255, 255, 0.65);
+    font-weight: 400;
+}
+
+.footer-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem 1.5rem;
+}
+
+.footer-links a {
+    color: rgba(255, 255, 255, 0.75);
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.footer-links a:hover,
+.footer-links a:focus-visible {
+    color: var(--header-mint);
+    text-decoration: underline;
+}
+
+/* Standalone text pages (legal notices, privacy policy, form confirmation) */
+.legal {
+    width: min(100% - 2rem, 48rem);
+    margin: 0 auto;
+    padding: 8rem 0 4rem;
+}
+
+.legal h1 {
+    margin: 0 0 0.5rem;
+    color: var(--header-plum);
+    font-size: clamp(1.8rem, 5vw, 2.75rem);
+}
+
+.legal .legal-updated {
+    margin: 0 0 2.5rem;
+    color: #6b5f68;
+    font-size: 0.85rem;
+}
+
+.legal h2 {
+    margin: 2.5rem 0 0.75rem;
+    color: var(--header-plum);
+    font-size: clamp(1.15rem, 2.5vw, 1.4rem);
+}
+
+.legal p,
+.legal li {
+    line-height: 1.7;
+}
+
+.legal ul {
+    padding-left: 1.25rem;
+}
+
+.legal li {
+    margin-bottom: 0.4rem;
+}
+
+.legal a {
+    color: var(--discord-blurple-dark);
+    font-weight: 600;
+}
+
+.legal .legal-back {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-top: 3rem;
+    padding: 0.8rem 1.25rem;
+    border-radius: 999px;
+    background: var(--header-plum);
+    color: white;
+    font-size: 0.9rem;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.legal .legal-back:hover,
+.legal .legal-back:focus-visible {
+    background: #719991;
+}
+
+/* Placeholder the association still has to fill in before publishing */
+.legal .todo {
+    padding: 0.1rem 0.4rem;
+    border-radius: 0.25rem;
+    background: #ffe8a3;
+    color: #6b4e00;
+    font-weight: 700;
+}
+
+/* Form confirmation page */
+.thanks {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100svh;
+    padding: 2rem 1rem;
+    background: #f8f3ed;
+    text-align: center;
+}
+
+.thanks-card {
+    width: min(100%, 34rem);
+    padding: clamp(2rem, 6vw, 3.5rem);
+    border: 1px solid rgba(80, 13, 65, 0.12);
+    border-radius: 1.25rem;
+    background: white;
+    box-shadow: 0 1rem 2.5rem rgba(80, 13, 65, 0.08);
+}
+
+/* Direct child only: the icons inside .thanks-actions buttons must stay white. */
+.thanks-card > i {
+    color: #719991;
+    font-size: 3rem;
+}
+
+.thanks-card h1 {
+    margin: 1.25rem 0 0.75rem;
+    color: var(--header-plum);
+    font-size: clamp(1.5rem, 4vw, 2.25rem);
+}
+
+.thanks-card p {
+    margin: 0 0 1.75rem;
+    line-height: 1.6;
+}
+
+.thanks-actions {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.75rem;
+}
+
+.thanks-actions a {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.8rem 1.25rem;
+    border-radius: 999px;
+    background: var(--header-plum);
+    color: white;
+    font-size: 0.9rem;
+    font-weight: 700;
+    text-decoration: none;
+    transition: background-color 0.25s ease;
+}
+
+.thanks-actions a.is-discord {
+    background: var(--discord-blurple);
+}
+
+.thanks-actions a:hover,
+.thanks-actions a:focus-visible {
+    background: #719991;
+}
+
+.thanks-actions a.is-discord:hover,
+.thanks-actions a.is-discord:focus-visible {
+    background: var(--discord-blurple-dark);
 }
 
 /* Responsive media queries */
@@ -930,13 +1140,14 @@ a {
         font-size: 1.2rem;
     }
 
-    .hero-content {
-        right: 1.5rem;
-        left: 1.5rem;
+    .intro {
+        padding: 7rem 1.5rem 4rem;
     }
 
+    /* 16vw rather than 18vw: at 320px the old value left only ~16px of slack on
+       "Peins, joue,", which the wider fallback font can eat before Quicksand loads. */
     .hero-content h1 {
-        font-size: clamp(3.5rem, 18vw, 6rem);
+        font-size: clamp(3rem, 16vw, 6rem);
     }
 
     .hero-actions {

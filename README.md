@@ -73,6 +73,61 @@ These images appear as circular avatar icons (vignettes) next to each step in th
 
 ---
 
+## ⚠️ Before publishing: fill in the legal placeholders
+
+`mentions-legales.html` contains three facts that only the association can supply. They are highlighted
+in yellow on the rendered page (`<span class="todo">`) so they are impossible to miss:
+
+| Placeholder | What to put |
+| :--- | :--- |
+| Téléphone | A contact phone number for the association |
+| Numéro RNA | The `W________` number on the préfecture declaration receipt |
+| Directeur de la publication | First and last name of the president (legal representative) |
+
+Find them with `grep -n 'class="todo"' mentions-legales.html`, then delete the `<span class="todo">…</span>`
+wrapper along with the placeholder text.
+
+> The LCEN (art. 6 III-1) requires a legal person publishing a website to disclose its name, registered
+> address, phone number, publication director and host. These pages were drafted to meet that baseline
+> plus RGPD art. 13 information duties — **they are not legal advice.** Have a board member read them
+> before going live.
+
+---
+
+## Site Pages
+
+| File | Indexed? | Role |
+| :--- | :--- | :--- |
+| `index.html` | Yes | Single-page site (all sections) |
+| `mentions-legales.html` | Yes | Legal notice — LCEN art. 6 III-1 |
+| `confidentialite.html` | Yes | Privacy policy — RGPD art. 13 |
+| `merci.html` | No (`noindex`) | Confirmation shown after the contact form is submitted |
+
+All pages share `styles.css` and the same footer. `merci.html` is deliberately excluded from
+`sitemap.xml` because it is a post-submission destination, not a landing page.
+
+### Contact form
+
+The form posts to [FormSubmit](https://formsubmit.co/) and its `_next` hidden field redirects to
+`merci.html`. **Both `_next` and the `rel=canonical` / `og:url` tags hardcode the absolute site URL**
+(`https://roikkun.github.io/leswarpiculteurs-site/`). If the site ever moves to a custom domain, update:
+
+```bash
+grep -rn "roikkun.github.io" . --include=*.html --include=*.xml --include=*.txt
+```
+
+> FormSubmit requires a one-time activation: the first submission triggers a confirmation e-mail to
+> `leswarpiculteurs@gmail.com` that must be clicked before messages start arriving.
+
+### External action links
+
+| Link | Where it lives |
+| :--- | :--- |
+| HelloAsso membership | Step 4 of `#jouerAvecNous` (`.step-link-join`) — renew the URL each season |
+| Discord invite | See the section below |
+
+---
+
 ## Discord Invite Link
 
 Discord is presented as the association's primary information channel, so the invite URL

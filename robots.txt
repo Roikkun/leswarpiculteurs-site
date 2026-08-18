@@ -1,4 +1,5 @@
 User-agent: *
 Allow: /
 
-Sitemap: sitemap.xml
+# The Sitemap directive must be an absolute URL; a relative path is ignored by crawlers.
+Sitemap: https://roikkun.github.io/leswarpiculteurs-site/sitemap.xml

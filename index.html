@@ -11,6 +11,7 @@
     <meta name="author" content="Les Warpiculteurs">
     <meta name="robots" content="index, follow">
     <meta name="theme-color" content="#21182a">
+    <link rel="canonical" href="https://roikkun.github.io/leswarpiculteurs-site/">
 
     <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="favicon.svg">
@@ -20,6 +21,7 @@
     <meta property="og:type" content="website">
     <meta property="og:locale" content="fr_FR">
     <meta property="og:site_name" content="Les Warpiculteurs">
+    <meta property="og:url" content="https://roikkun.github.io/leswarpiculteurs-site/">
     <meta property="og:title" content="Les Warpiculteurs | Association de Wargame & Jeux de Figurines à Villemomble">
     <meta property="og:description" content="Association de wargame et jeux de figurines à Villemomble (93). Warhammer 40k, Age of Sigmar, tournois, initiations et parties libres.">
     <meta property="og:image" content="./img/header.png">
@@ -55,6 +57,16 @@
         "longitude": 2.554288
       },
       "email": "leswarpiculteurs@gmail.com",
+      "url": "https://roikkun.github.io/leswarpiculteurs-site/",
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": "https://schema.org/Saturday",
+          "opens": "08:30",
+          "closes": "18:30",
+          "description": "Un samedi sur deux : consultez le planning ou le Discord pour les dates exactes."
+        }
+      ],
       "sameAs": [
         "https://www.facebook.com/LesWarpiculteurs",
         "https://discord.gg/ApjmxBuTHG",
@@ -206,7 +218,8 @@
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2625.4707333188564!2d2.554288315674908!3d48.89662297928768!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e4c17b6d4e674f%3A0x84004d2c1d226ba1!2s1%20Place%20Charles%20de%20Gaulle%2C%2093250%20Villemomble%2C%20France!5e0!3m2!1sfr!2sfr!4v1633295934637!5m2!1sfr!2sfr"
             title="Localisation de l'association"
             allowfullscreen=""
-            loading="lazy">
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade">
         </iframe>
     </div>
 </section>
@@ -248,6 +261,12 @@
             <div class="content">
                 <h3>4. Deviens adhérent et profite des bonus</h3>
                 <p class="description">L'adhésion est a 40€ par an et te donne accès à nos animations et réductions pour les évènements !</p>
+                <a class="step-link step-link-join"
+                   href="https://www.helloasso.com/associations/les-warpiculteurs/adhesions/adhesion-les-warpiculteurs-2025-2026"
+                   target="_blank" rel="noopener noreferrer">
+                    <i class="fa-solid fa-ticket" aria-hidden="true"></i>
+                    Adhérer en ligne <span aria-hidden="true">→</span>
+                </a>
             </div>
         </div>
     </div>
@@ -263,6 +282,7 @@
 
     <form class="contact-form" action="https://formsubmit.co/leswarpiculteurs@gmail.com" method="POST" accept-charset="UTF-8">
         <input type="hidden" name="_subject" value="Nouveau message depuis le site des Warpiculteurs">
+        <input type="hidden" name="_next" value="https://roikkun.github.io/leswarpiculteurs-site/merci.html">
         <input type="text" name="_honey" tabindex="-1" autocomplete="off" aria-hidden="true">
 
         <div class="form-field">
@@ -281,6 +301,10 @@
         </div>
 
         <button type="submit">Envoyer le message</button>
+
+        <p class="form-privacy">Les informations saisies servent uniquement à traiter votre demande et ne sont
+            jamais cédées à des tiers. Voir notre
+            <a href="confidentialite.html">politique de confidentialité</a>.</p>
     </form>
 
     <ul class="wrapper">
@@ -304,6 +328,19 @@
         </li>
     </ul>
 </section>
+
+<footer class="site-footer">
+    <div class="footer-inner">
+        <p class="footer-brand">Les Warpiculteurs<br>
+            <span>Association loi 1901 — Villemomble (93)</span></p>
+
+        <nav class="footer-links" aria-label="Liens légaux">
+            <a href="mentions-legales.html">Mentions légales</a>
+            <a href="confidentialite.html">Politique de confidentialité</a>
+            <a href="https://discord.gg/ApjmxBuTHG" target="_blank" rel="noopener noreferrer">Discord</a>
+        </nav>
+    </div>
+</footer>
 
 <script>
 document.addEventListener('DOMContentLoaded', () => {
