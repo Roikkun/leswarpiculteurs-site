@@ -103,7 +103,7 @@
         </div>
 
         <div class="nav-actions">
-            <a class="nav-discord" href="https://discord.gg/ApjmxBuTHG" target="_blank" rel="noopener noreferrer"
+            <a class="nav-discord" data-discord-link href="https://discord.gg/ApjmxBuTHG" target="_blank" rel="noopener noreferrer"
                aria-label="Rejoindre le Discord des Warpiculteurs">
                 <i class="fa-brands fa-discord" aria-hidden="true"></i>
                 <span class="nav-discord-label">Rejoindre le Discord</span>
@@ -123,7 +123,7 @@
         <h1>Peins, joue,<br><em>raconte.</em></h1>
         <p class="hero-description">Une communauté de passionnés de jeux de figurines, à Villemomble.</p>
         <div class="hero-actions">
-            <a class="hero-link hero-link-discord" href="https://discord.gg/ApjmxBuTHG" target="_blank" rel="noopener noreferrer">
+            <a class="hero-link hero-link-discord" data-discord-link href="https://discord.gg/ApjmxBuTHG" target="_blank" rel="noopener noreferrer">
                 <i class="fa-brands fa-discord" aria-hidden="true"></i>
                 Rejoindre le Discord
             </a>
@@ -193,7 +193,7 @@
                 engagement, même si tu n'es pas encore adhérent.</p>
         </div>
 
-        <a class="discord-button" href="https://discord.gg/ApjmxBuTHG" target="_blank" rel="noopener noreferrer">
+        <a class="discord-button" data-discord-link href="https://discord.gg/ApjmxBuTHG" target="_blank" rel="noopener noreferrer">
             <i class="fa-brands fa-discord" aria-hidden="true"></i>
             Rejoindre le Discord
         </a>
@@ -233,7 +233,7 @@
             <div class="content">
                 <h3>1. Rejoins-nous sur Discord</h3>
                 <p class="description">C'est là que tout se passe : actualités, planning et organisation des parties.</p>
-                <a class="step-link" href="https://discord.gg/ApjmxBuTHG" target="_blank" rel="noopener noreferrer">
+                <a class="step-link" data-discord-link href="https://discord.gg/ApjmxBuTHG" target="_blank" rel="noopener noreferrer">
                     <i class="fa-brands fa-discord" aria-hidden="true"></i>
                     Ouvrir l'invitation <span aria-hidden="true">→</span>
                 </a>
@@ -277,7 +277,7 @@
         <a href="mailto:leswarpiculteurs@gmail.com" target="_blank" rel="noopener noreferrer">leswarpiculteurs@gmail.com</a></h1>
 
     <p class="contact-hint">Pour une réponse rapide, le plus simple reste le
-        <a href="https://discord.gg/ApjmxBuTHG" target="_blank" rel="noopener noreferrer">Discord</a> :
+        <a data-discord-link href="https://discord.gg/ApjmxBuTHG" target="_blank" rel="noopener noreferrer">Discord</a> :
         on y est tous les jours.</p>
 
     <form class="contact-form" action="https://formsubmit.co/leswarpiculteurs@gmail.com" method="POST" accept-charset="UTF-8">
@@ -315,7 +315,7 @@
             </a>
         </li>
         <li class="icon discord">
-            <a href="https://discord.gg/ApjmxBuTHG" target="_blank" rel="noopener noreferrer">
+            <a data-discord-link href="https://discord.gg/ApjmxBuTHG" target="_blank" rel="noopener noreferrer">
                 <span class="tooltip">Discord</span>
                 <i class="fa-brands fa-discord" aria-hidden="true"></i>
             </a>
@@ -331,19 +331,25 @@
 
 <footer class="site-footer">
     <div class="footer-inner">
-        <p class="footer-brand">Les Warpiculteurs<br>
+        <p class="footer-brand">&copy; 2026 Les Warpiculteurs<br>
             <span>Association loi 1901 — Villemomble (93)</span></p>
 
         <nav class="footer-links" aria-label="Liens légaux">
             <a href="mentions-legales.html">Mentions légales</a>
             <a href="confidentialite.html">Politique de confidentialité</a>
-            <a href="https://discord.gg/ApjmxBuTHG" target="_blank" rel="noopener noreferrer">Discord</a>
+            <a data-discord-link href="https://discord.gg/ApjmxBuTHG" target="_blank" rel="noopener noreferrer">Discord</a>
         </nav>
     </div>
 </footer>
 
 <script>
+const DISCORD_URL = 'https://discord.gg/ApjmxBuTHG';
+
 document.addEventListener('DOMContentLoaded', () => {
+    document.querySelectorAll('[data-discord-link]').forEach((link) => {
+        link.href = DISCORD_URL;
+    });
+
     const navigation = document.querySelector('.site-nav');
     const toggle = document.querySelector('.menu-toggle');
     const menu = document.querySelector('.menu-links');
