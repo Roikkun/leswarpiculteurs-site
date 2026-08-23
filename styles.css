@@ -112,15 +112,8 @@ a {
 }
 
 .brand-mark {
-    display: grid;
-    place-items: center;
-    width: 2.25rem;
-    height: 2.25rem;
-    border: 1px solid var(--header-mint);
-    border-radius: 50%;
-    color: var(--header-mint);
-    font-family: "Sour Gummy", sans-serif;
-    font-size: 1.5rem;
+    width: 2.5rem;
+    height: 2.5rem;
 }
 
 .menu-links {
@@ -1280,11 +1273,6 @@ a {
 @media (max-width: 380px) {
     .brand {
         font-size: 0.9rem;
-    }
-
-    .brand-mark {
-        width: 2rem;
-        height: 2rem;
     }
 
     .hero-description {

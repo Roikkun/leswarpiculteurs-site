@@ -66,10 +66,12 @@ These images appear as circular avatar icons (vignettes) next to each step in th
 
 ### 5. Site Identity & Favicon
 
-* **Brand Favicon & Icon:** `favicon.svg`
+* **Header Brand Logo:** `img/logo.png`
+  * **Location:** Navigation bar brand logo on the top-left of the homepage.
+  * **Format:** PNG with transparent background (rendered within a round background frame).
+* **Brand Favicon & Icon:** `img/logo-with-bg.png`
   * **Location:** Browser tab icon, mobile bookmarks (`apple-touch-icon`), and Schema.org logo.
-  * **Format:** Scalable Vector Graphics (SVG).
-  * **Tip:** Retains crisp sharpness across all device resolutions.
+  * **Format:** PNG.
 
 ---
 
