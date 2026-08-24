@@ -507,9 +507,6 @@ a {
 }
 
 .calendar-legend .legend-item {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.5rem;
     font-size: 0.9rem;
     color: #4a3d54;
 }
@@ -517,24 +514,6 @@ a {
 .calendar-legend .legend-item strong {
     color: var(--header-plum);
     font-weight: 700;
-}
-
-.legend-badge {
-    display: inline-block;
-    width: 0.85rem;
-    height: 0.85rem;
-    border-radius: 50%;
-    flex-shrink: 0;
-}
-
-.legend-badge.badge-pink {
-    background-color: #e05297;
-    box-shadow: 0 0 0 2px rgba(224, 82, 151, 0.25);
-}
-
-.legend-badge.badge-green {
-    background-color: #27ae60;
-    box-shadow: 0 0 0 2px rgba(39, 174, 96, 0.25);
 }
 
 .map-container {
@@ -1075,7 +1054,7 @@ a {
 }
 
 /* Responsive media queries */
-@media (max-width: 700px) {
+@media (max-width: 930px) {
     .menu-toggle {
         position: relative;
         display: block;
